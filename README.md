@@ -1,5 +1,7 @@
 # Avizi
 
+**Türkçe** · [English](README.en.md)
+
 Türkiye'deki balıkçılık topluluğu için sosyal platform. Kişiselleştirilmiş akış, av günlüğü, ekipman setleri, mera takibi ve gönderi düzeyinde konum gizliliği.
 
 **Vitrin:** [lightwonkas.github.io/avizi-showcase](https://lightwonkas.github.io/avizi-showcase/)
