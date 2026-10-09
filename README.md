@@ -74,7 +74,7 @@ flowchart LR
 | | |
 |---|---|
 | **Emin Özbayraktar** | Kurucu ortak — Ürün ve Teknoloji |
-| **Arda** | Kurucu ortak — Büyüme ve Topluluk |
+| **Arda Burak Akalın** | Kurucu ortak — Büyüme ve Topluluk |
 
 ## İletişim
 
