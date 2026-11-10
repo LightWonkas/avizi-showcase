@@ -2,7 +2,7 @@
 
 **Türkçe** · [English](README.en.md)
 
-Türkiye'deki balıkçılık topluluğu için sosyal platform. Kişiselleştirilmiş akış, av günlüğü, ekipman setleri, mera takibi ve gönderi düzeyinde konum gizliliği.
+Türkiye'de olta ve zıpkınla avlanan yetişkinler (18+) için topluluk platformu. Kişisel akış, Av Günlüğü, hava ve deniz planlaması, mera takibi ve gönderi başına konum gizliliği; web'de ve iOS/Android uygulamasında.
 
 **Vitrin:** [lightwonkas.github.io/avizi-showcase](https://lightwonkas.github.io/avizi-showcase/)
 
@@ -11,18 +11,33 @@ Türkiye'deki balıkçılık topluluğu için sosyal platform. Kişiselleştiril
   <img alt="Avizi vitrin sayfası" src="docs/preview-light.png">
 </picture>
 
-> **Durum:** Geliştirme aşamasında, kapalı beta öncesi. Uygulama kaynak kodu özel depodadır; bu depo yalnızca vitrin sayfasını içerir.
+> **Durum:** Web ve mobil çekirdek hazır; yayında değil. Sıradaki adımlar dış hesaplara bağlı. Uygulama kaynak kodu özel depodadır; bu depo yalnızca vitrin sayfasını içerir.
 
 ## Teknoloji
 
 | Katman | Bileşen |
 |---|---|
-| Uygulama | Next.js 16 · React 19 · TypeScript |
+| Web | Next.js 16 · React 19 · TypeScript |
+| Mobil | Expo (React Native) · iOS ve Android |
 | Veri | Supabase — PostgreSQL 17, Auth, Storage, Row Level Security |
 | Öneri | Gorse · outbox tabanlı senkronizasyon worker'ı |
-| Moderasyon | Ayrı origin üzerinde panel, zorunlu TOTP |
-| Uyum | KVKK kapsamında veri dışa aktarma ve hesap silme |
+| Hava | Open-Meteo tahmini, değişmez anlık kayıt |
+| Moderasyon | Ayrı origin üzerinde panel, zorunlu TOTP, denetim kaydı |
+| Uyum | KVKK: veri dışa aktarma, 14 günlük askılı hesap silme; 5651 erişim kaydı |
 | Deney | A/B altyapısı — sticky atama, deney başına kill switch |
+
+## Özellikler
+
+- **Av Günlüğü:** temel ve ayrıntılı kayıt; oltada takım ve misina, zıpkında derinlik, dip süresi ve görüş alanları; boş dönüş de kaydedilir. Kayıt gizli kalabilir ya da gönderiye dönüşür.
+- **Hava ve deniz planlama:** rüzgâr, dalga, basınç ve ay evresi; kaydedilen plan tahminin değişmez bir kopyasını tutar.
+- **Çevrimdışı kayıt:** kayıt cihazda kuyruğa girer, bağlantı gelince senkronlanır; çakışmada sunucu sessizce üzerine yazmaz.
+- **Konum gizliliği:** dört seviye — kesin, yaklaşık (~3 km, H3 res 6), bölgesel (il/ilçe), gizli. Fotoğraflardaki EXIF konum bilgisi silinir.
+- **Tür kataloğu ve Tebliğ kuralları:** yasak dönem ve asgari boy uyarısı; kurallar resmî metinle doğrulanmadan yayımlanmaz.
+- **Topluluk mera analizi:** yalnız ≥ 30 kayıt, ≥ 5 kişi ve tek kişinin payı ≤ %40 olduğunda; katılmamak mümkün.
+- **Kişisel analiz, Bilgi Merkezi, puan sistemi, herkese açık gönderi sayfası, işletme vitrini ve dizini.**
+- **Paketler:** Freemium, Premium, Creator ve Ticari; haklar tek katmanda tutulur.
+
+Dış hesap ya da kurucu kararı bekleyen özellikler kapalı bayrakla gelir.
 
 ## Mimari
 
@@ -30,7 +45,7 @@ Türkiye'deki balıkçılık topluluğu için sosyal platform. Kişiselleştiril
 
 ```mermaid
 flowchart LR
-  C[Web istemcisi] <--> N[Next.js 16<br/>112 API route]
+  C[Web ve mobil istemci<br/>React 19 · Expo] <--> N[Next.js 16<br/>221 API route]
   N <-->|RLS| DB[(PostgreSQL 17)]
   DB --> O[Outbox]
   O --> W[Öneri worker'ı]
@@ -39,7 +54,7 @@ flowchart LR
   M[Moderasyon paneli<br/>ayrı origin · TOTP] --> DB
 ```
 
-### Akış hattı — v1.1.0
+### Akış hattı — home-v1.1.0
 
 | Aşama | İşlev |
 |---|---|
@@ -50,25 +65,27 @@ flowchart LR
 | Teslimat | Teslimat ve exposure kaydının tek transaction içinde yazılması |
 | Gösterim | Nitelikli gösterim eşiği: ≥ %50 görünürlük, ≥ 1 sn |
 
+V1.2 sıralama formülü (ilgi, tazelik, yazar puanı; %10–20 keşif payı) taslak sürüm `home-v1.3.0` olarak hazır, bayrakla kapalı.
+
 ## Mühendislik
 
 | Metrik | Değer |
 |---|---|
-| Veritabanı migration'ı | 146 |
-| pgTAP SQL test dosyası | 72 |
-| Uygulama test dosyası | 212 |
-| API route | 112 |
+| Veritabanı migration'ı | 315 |
+| pgTAP SQL test dosyası | 175 |
+| Uygulama test dosyası (web ve mobil) | 461 |
+| API route | 221 |
 
 - **Arayüz ilkesi:** sahte veri ve sahte başarı durumu gösterilmez; devre dışı özellikler kapalı ve gerekçesiyle görünür.
 - **Erişilebilirlik:** 44 px minimum dokunma alanı, tam klavye desteği, açık/koyu tema, `prefers-reduced-motion`.
 
 ## Yol haritası
 
-1. Kontrollü staging ortamı
-2. Yasal metinlerin onayı
-3. Alan adı ve e-posta altyapısı
-4. Gözlemlenebilirlik
-5. Kapasite testleri
+1. Mağaza ve giriş sağlayıcı hesapları (Apple, Google Play, Google ve Apple ile giriş; alan adı ve e-posta)
+2. Hukuk metinleri
+3. Sunucu (Hetzner) ve yedek
+4. Gözlem: hata takibi ve ürün analitiği
+5. Mobil kapalı test: Google Play'de 12 testçi × 14 gün, TestFlight
 6. Kapalı beta
 
 ## Ekip

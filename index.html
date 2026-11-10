@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Avizi — Ürün ve mühendislik vitrini</title>
-<meta name="description" content="Avizi: Türkiye'deki balıkçılık topluluğu için sosyal platform. Ürün özellikleri, öneri hattı ve mimari. Geliştirme aşamasında.">
+<meta name="description" content="Avizi: Türkiye'de olta ve zıpkınla avlananlar için topluluk, av günlüğü ve planlama platformu. Web ve mobil. Ürün özellikleri, öneri hattı ve mimari. Geliştirme aşamasında.">
 <meta name="author" content="Emin Özbayraktar">
 <meta name="color-scheme" content="light dark">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -334,6 +334,19 @@ section.block { padding: 72px 0; border-top: 1px solid var(--line); }
 .locked b { color: var(--fg); font-weight: 600; display: block; }
 .locked .ico { margin-top: 2px; }
 
+/* ---------- Catch log, planning, platform ---------- */
+.rule-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.rule-row span { font-family: var(--mono); font-size: 12px; padding: 4px 10px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-sm); }
+.wx { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.wx div { background: var(--card); padding: 10px 12px; line-height: 1.3; min-width: 0; }
+.wx small { display: block; color: var(--muted); font-size: 11.5px; }
+.wx b { font-family: var(--mono); font-weight: 500; font-size: 14px; }
+.cap-grid { display: grid; gap: 12px; }
+@media (min-width: 700px) { .cap-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+@media (min-width: 1000px) { .cap-grid { grid-template-columns: repeat(3, 1fr); } }
+.cap-grid .side-item h3 { flex-wrap: wrap; }
+.off { font-size: 11px; font-weight: 600; color: var(--muted); background: var(--subtle); padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+
 /* ---------- How it works ---------- */
 .steps { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; counter-reset: step; }
 @media (min-width: 800px) { .steps { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
@@ -568,6 +581,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
     </a>
     <nav class="nav" aria-label="Bölümler">
       <a href="#ozellikler">Özellikler</a>
+      <a href="#av">Av ve plan</a>
       <a href="#mimari">Mimari</a>
       <a href="#muhendislik">Mühendislik</a>
       <a href="#durum">Durum</a>
@@ -597,15 +611,15 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
   </svg>
   <div class="wrap hero-grid">
     <div>
-      <span class="status-pill"><span class="dot" aria-hidden="true"></span>Geliştirme aşamasında, henüz yayında değil</span>
+      <span class="status-pill"><span class="dot" aria-hidden="true"></span>Web ve mobil çekirdek hazır, henüz yayında değil</span>
       <h1 id="hero-title">Mera bilgisini paylaşmak için bir yer, sırrını vermeden.</h1>
-      <p class="hero-lead">Avizi, Türkiye'deki balıkçılık topluluğu için bir sosyal platform: kişisel akış, av günlüğü, ekipman, mera takibi ve gönderi başına konum gizliliği.</p>
+      <p class="hero-lead">Avizi, Türkiye'de olta ve zıpkınla avlanan yetişkinler (18+) için bir topluluk: kişisel akış, Av Günlüğü, hava ve deniz planlaması, mera takibi ve gönderi başına konum gizliliği. Web'de ve iOS/Android uygulamasında.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#iletisim">İletişime geç</a>
         <a class="btn btn-ghost" href="#mimari">Mimariyi incele</a>
       </div>
       <ul class="hero-stack" aria-label="Teknoloji yığını">
-        <li>Next.js 16</li><li>React 19</li><li>TypeScript</li><li>PostgreSQL 17</li><li>Supabase RLS</li><li>Gorse</li>
+        <li>Next.js 16</li><li>React 19</li><li>TypeScript</li><li>Expo</li><li>PostgreSQL 17</li><li>Supabase RLS</li><li>Gorse</li>
       </ul>
       <p class="hero-byline">Ürün ve teknoloji: <strong>Emin Özbayraktar</strong></p>
     </div>
@@ -677,7 +691,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
   <div class="wrap">
     <div class="block-head reveal">
       <h2 id="problem-title">Balıkçının bilgisi bugün dağınık yerlerde kayboluyor</h2>
-      <p>Hangi yemin çalıştığı, suyun ne durumda olduğu, hangi takımın işe yaradığı: bu bilgi var ama kimsenin geri bulamayacağı yerlerde duruyor.</p>
+      <p>Hangi yemin çalıştığı, suyun ve görüşün ne durumda olduğu, balığın hangi derinlikte durduğu: oltacının da zıpkıncının da bu bilgisi var, ama kimsenin geri bulamayacağı yerlerde duruyor.</p>
     </div>
     <div class="problem-grid reveal">
       <div class="problem-item">
@@ -686,15 +700,15 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
       </div>
       <div class="problem-item">
         <h3>Dağınık forumlar</h3>
-        <p>Eski, bakımsız ve mobilde kullanması zor. Ekipman ve av bilgisi bir arada tutulmuyor.</p>
+        <p>Eski, bakımsız ve mobilde kullanması zor. Ekipman, av kaydı ve hava bilgisi bir arada tutulmuyor.</p>
       </div>
       <div class="problem-item">
         <h3>Genel sosyal medya</h3>
-        <p>Balıkçılık içeriği alakasız gönderiler arasında boğuluyor. Konum bilgisi üzerinde hassas bir kontrol yok.</p>
+        <p>Av içeriği alakasız gönderiler arasında boğuluyor. Konum bilgisi üzerinde hassas bir kontrol yok.</p>
       </div>
     </div>
     <div class="tension reveal">
-      <p><strong>Asıl gerilim:</strong> balıkçılar bilgi paylaşmak ister, ama iyi bir merayı herkesin önüne koymak istemez. Avizi'de konum, gönderi başına seçilen bir hassasiyet ayarıdır; paylaşım ile gizlilik arasında karar kullanıcıda kalır.</p>
+      <p><strong>Asıl gerilim:</strong> avcılar bilgi paylaşmak ister, ama iyi bir merayı herkesin önüne koymak istemez. Avizi'de konum, gönderi başına dört seviyeden biriyle paylaşılır; paylaşım ile gizlilik arasında karar kullanıcıda kalır.</p>
     </div>
   </div>
 </section>
@@ -704,7 +718,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
   <div class="wrap">
     <div class="block-head reveal">
       <h2 id="feat-title">Ürün</h2>
-      <p>Düzen X/Twitter'a yakın: akış, konuşma zincirleri, sekmeli profil. Arayüz tamamen Türkçe. Aşağıdaki ekranlar örnek içerikle çizildi.</p>
+      <p>Düzen X/Twitter'a yakın: akış, konuşma zincirleri, sekmeli profil. Arayüz tamamen Türkçe; aynı hesap web'de ve mobil uygulamada çalışır. Aşağıdaki ekranlar örnek içerikle çizildi.</p>
     </div>
 
     <div class="feat-grid">
@@ -797,8 +811,8 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
 
       <!-- Gear -->
       <article class="feat span-5 reveal">
-        <h3>Av günlüğü ve ekipman</h3>
-        <p>Kullanıcı ekipman setlerini profilinde tutar ve bir gönderiye bağlar. Her gönderi balıkçılık türüyle etiketlenir.</p>
+        <h3>Ekipman setleri</h3>
+        <p>Kullanıcı ekipman setlerini profilinde tutar ve bir gönderiye bağlar. Her gönderi avcılık yöntemiyle etiketlenir.</p>
         <div class="mini">
           <div class="gear">
             <div class="gear-head"><b>Kıyı spin seti</b><span class="chip type">Spin</span></div>
@@ -807,7 +821,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
             <div class="gear-row"><span>Ana misina</span><span>PE 1.0</span></div>
             <div class="gear-row"><span>Yem</span><span>Sahte yem, 12 cm</span></div>
           </div>
-          <div class="badges" aria-label="Balıkçılık türü rozetleri">
+          <div class="badges" aria-label="Avcılık yöntemi rozetleri">
             <span class="chip type">Spin</span><span class="chip type">LRF</span><span class="chip type">Jig</span><span class="chip type">Surf casting</span><span class="chip type">Olta</span>
           </div>
         </div>
@@ -842,12 +856,13 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
       <!-- Privacy -->
       <article class="feat span-6 reveal">
         <h3>Konum gizliliği</h3>
-        <p>Konum, her gönderide seçilen bir hassasiyettir. Mera sırrı, paylaşanın kararıyla korunur. Seçenekleri deneyin:</p>
+        <p>Konum, her gönderide seçilen dört seviyeden biridir; varsayılan bölgeseldir. Fotoğraflardaki EXIF konum bilgisi yüklemede silinir. Seviyeleri deneyin:</p>
         <div class="mini privacy">
-          <div class="seg" role="radiogroup" aria-label="Konum hassasiyeti (örnek)" id="privacySeg">
-            <button type="button" role="radio" aria-checked="false" data-mode="exact" tabindex="-1"><span class="radio" aria-hidden="true"></span><span>Kesin konum<small>Nokta olarak görünür</small></span></button>
-            <button type="button" role="radio" aria-checked="true" data-mode="approx"><span class="radio" aria-hidden="true"></span><span>Yaklaşık bölge<small>Geniş bir alan olarak görünür</small></span></button>
-            <button type="button" role="radio" aria-checked="false" data-mode="hidden" tabindex="-1"><span class="radio" aria-hidden="true"></span><span>Konum yok<small>Gönderide konum paylaşılmaz</small></span></button>
+          <div class="seg" role="radiogroup" aria-label="Konum seviyesi (örnek)" id="privacySeg">
+            <button type="button" role="radio" aria-checked="false" data-mode="exact" tabindex="-1"><span class="radio" aria-hidden="true"></span><span>Kesin<small>Nokta olarak görünür</small></span></button>
+            <button type="button" role="radio" aria-checked="false" data-mode="approx" tabindex="-1"><span class="radio" aria-hidden="true"></span><span>Yaklaşık<small>Yaklaşık 3 km'lik hücre (H3 res 6)</small></span></button>
+            <button type="button" role="radio" aria-checked="true" data-mode="regional"><span class="radio" aria-hidden="true"></span><span>Bölgesel<small>Yalnız il ve ilçe adı</small></span></button>
+            <button type="button" role="radio" aria-checked="false" data-mode="hidden" tabindex="-1"><span class="radio" aria-hidden="true"></span><span>Gizli<small>Gönderide konum yok</small></span></button>
           </div>
           <div class="map-col"><div class="map">
             <svg viewBox="0 0 240 180" aria-hidden="true">
@@ -856,11 +871,11 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
               <path class="contour" d="M0 104c40-10 72 14 108 12s50-30 82-36 38 0 50 2"/>
               <path class="contour" d="M0 126c44-8 80 16 116 12s56-28 86-30 30 4 38 6"/>
               <path class="contour" d="M0 150c48-6 86 16 124 10s58-24 88-24 22 2 28 4"/>
-              <circle class="zone" id="zone" cx="132" cy="118" r="44"/>
+              <circle class="zone" id="zone" cx="132" cy="118" r="72"/>
               <g class="pin" id="pin" style="opacity:0"><circle cx="132" cy="118" r="5"/><circle cx="132" cy="118" r="10" fill-opacity=".2"/></g>
             </svg>
             </div>
-            <div class="map-cap" id="mapCap" aria-live="polite">Gönderide geniş bir bölge görünür, nokta görünmez.</div>
+            <div class="map-cap" id="mapCap" aria-live="polite">Gönderide yalnız il ve ilçe adı görünür, koordinat görünmez.</div>
           </div>
         </div>
       </article>
@@ -906,7 +921,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
       <!-- Business -->
       <article class="feat span-6 reveal">
         <h3>İşletmeler</h3>
-        <p>Balıkçı dükkânları ve rehberler ticari hesap açabilir. Sponsorlu alanlar altyapıda hazır, ama bilerek kapalı.</p>
+        <p>Av malzemesi dükkânları ve rehberler ticari hesapla vitrin açar: kategori, adres ve harita pini, çalışma saatleri, iletişim ve en çok iki sabit gönderi. Keşfet'te işletme dizini var. Sponsorlu alanlar altyapıda hazır, ama bilerek kapalı.</p>
         <div class="mini">
           <div class="biz">
             <span class="av lg a2" aria-hidden="true">ÖD</span>
@@ -924,6 +939,124 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
   </div>
 </section>
 
+<!-- ================= CATCH LOG & PLANNING ================= -->
+<section class="block" id="av" aria-labelledby="av-title">
+  <div class="wrap">
+    <div class="block-head reveal">
+      <h2 id="av-title">Av, plan ve kayıt</h2>
+      <p>Olta ve zıpkın için aynı defter: çıkmadan önce hava ve deniz, döndükten sonra kayıt, zamanla kişisel ve topluluk düzeyinde özet.</p>
+    </div>
+
+    <div class="feat-grid">
+      <article class="feat span-7 reveal">
+        <h3>Av Günlüğü</h3>
+        <p>Her çıkış kaydedilir; balıksız dönüş de bir sonuçtur. Temel kayıt hızlıdır; ayrıntılı kayıt oltada takım ve misina, zıpkında derinlik, dip süresi ve görüş mesafesi gibi alanlar ekler. Kayıt gizli kalabilir ya da seçilen alanlarla gönderiye dönüşür.</p>
+        <div class="mini">
+          <div class="gear">
+            <div class="gear-head"><b>Ayrıntılı kayıt</b><span class="chip type">Zıpkın</span></div>
+            <div class="gear-row"><span>Sonuç</span><span>Av var / Boş dönüş</span></div>
+            <div class="gear-row"><span>Tür</span><span>Tür, boy ve ağırlık</span></div>
+            <div class="gear-row"><span>Derinlik</span><span>Av derinliği, en fazla derinlik</span></div>
+            <div class="gear-row"><span>Dalış</span><span>Dip süresi, görüş mesafesi</span></div>
+          </div>
+          <p class="note">Oltada aynı yer takım ve misina alanlarıyla dolar.</p>
+        </div>
+      </article>
+
+      <article class="feat span-5 reveal">
+        <h3>Hava ve deniz planlama</h3>
+        <p>Open-Meteo tahminiyle rüzgâr, dalga, basınç ve ay evresi tek ekranda. Kaydedilen plan, o anki tahminin değişmez bir kopyasını tutar; sonradan neyin beklendiğine dönüp bakılabilir.</p>
+        <div class="mini">
+          <div class="wx" role="img" aria-label="Planlama ekranı, örnek veri: rüzgâr 14 km/s kuzeybatı, dalga 0,6 metre, basınç 1016 hPa, ay evresi ilk dördün">
+            <div><small>Rüzgâr</small><b>14 km/s KB</b></div>
+            <div><small>Dalga</small><b>0,6 m · 5 sn</b></div>
+            <div><small>Basınç</small><b>1016 hPa</b></div>
+            <div><small>Ay evresi</small><b>İlk dördün</b></div>
+          </div>
+          <p class="note">Örnek veri.</p>
+        </div>
+      </article>
+
+      <article class="feat span-6 reveal">
+        <h3>Çevrimdışı kayıt ve senkron</h3>
+        <p>Denizde bağlantı yoksa kayıt cihazda kuyruğa girer, bağlantı gelince senkronlanır. Aynı alan iki yerde değiştiyse sunucu sessizce üzerine yazmaz; kullanıcı iki değeri görür ve seçer.</p>
+        <div class="mini">
+          <div class="flow-steps" aria-label="Çevrimdışı kayıt süreci" style="margin-top:0">
+            <span>Cihazda kuyruk</span><i aria-hidden="true">/</i><span>Bağlantı</span><i aria-hidden="true">/</i><span>Senkron</span><i aria-hidden="true">/</i><span>Çakışmada kullanıcı seçer</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="feat span-6 reveal">
+        <h3>Tür kataloğu ve Tebliğ kuralları</h3>
+        <p>Türler, resmî Tebliğ'deki kurallarla birlikte tutulur. Günlükte yasak dönemdeki ya da asgari boyun altındaki av için uyarı çıkar. Kurallar panelden resmî metinle doğrulanmadan yayımlanmaz.</p>
+        <div class="mini">
+          <div class="rule-row" aria-label="Kural türleri">
+            <span>Asgari boy</span><span>Asgari ağırlık</span><span>Yasak dönem</span><span>Alıkonulabilir adet</span><span>Yer yasağı</span><span>Yöntem kuralı</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="feat span-6 reveal">
+        <h3>Topluluk mera analizi</h3>
+        <p>Bir meranın tür dağılımı, ay-saat ve disiplin özeti yalnız yeterli ve dağınık veri varsa gösterilir; tek bir kişinin kayıtları sonucu belirleyemez. Kullanıcı ayardan katılmamayı seçebilir.</p>
+        <div class="mini">
+          <div class="rule-row" aria-label="Gösterim eşikleri">
+            <span>≥ 30 kayıt</span><span>≥ 5 kişi</span><span>tek kişi ≤ %40</span>
+          </div>
+          <p class="note">Bayrakla kapalı; açılana kadar gösterilmez.</p>
+        </div>
+      </article>
+
+      <article class="feat span-6 reveal">
+        <h3>Kişisel analiz</h3>
+        <p>Toplam çıkış, boş dönüş oranı, en çok tutulan türler, aylık ve mevsimlik dağılım, derinlik özeti. Ücretli paketlerde; bayrakla kapalı.</p>
+        <div class="mini">
+          <div class="rule-row" aria-label="Analiz başlıkları">
+            <span>Çıkış sayısı</span><span>Boş dönüş oranı</span><span>İlk 5 tür</span><span>Ay / mevsim</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PLATFORM ================= -->
+<section class="block" id="platform" aria-labelledby="plat-title">
+  <div class="wrap">
+    <div class="block-head reveal">
+      <h2 id="plat-title">Platform</h2>
+      <p>Uygulamanın çevresindeki parçalar. Dış hesap ya da kurucu kararı bekleyenler kapalı bayrakla geliyor.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="side-item reveal">
+        <h3>Mobil uygulama</h3>
+        <p>Expo ile iOS ve Android: akış, gönderi, Av Günlüğü, kamera, harita, planlama ve çevrimdışı kayıt. Mağazalarda henüz yok.</p>
+      </div>
+      <div class="side-item reveal">
+        <h3>Bilgi Merkezi <span class="off">kapalı</span></h3>
+        <p>Rehber yazılarını kurucular hazırlar. Zıpkın yazılarında gövdeden ayrı, sabit bir güvenlik uyarısı alanı var; Tebliğ'e bağlantı verilir.</p>
+      </div>
+      <div class="side-item reveal">
+        <h3>Puan sistemi <span class="off">kapalı</span></h3>
+        <p>Etkileşim, giriş serisi ve onaylı katkılar puan kazandırır; tavan ve saatlik sınır kötüye kullanımı keser.</p>
+      </div>
+      <div class="side-item reveal">
+        <h3>Paketler</h3>
+        <p>Freemium, Premium, Creator ve Ticari. Haklar tek bir katmanda tutulur; mağaza içi satın alma bağlanınca aynı hak her platformda geçerli olur.</p>
+      </div>
+      <div class="side-item reveal">
+        <h3>Herkese açık gönderi sayfası <span class="off">kapalı</span></h3>
+        <p>Herkese açık bir gönderi uygulama olmadan da açılır. Konum yalnız seçilen seviyede görünür; ziyaretçinin ham IP adresi saklanmaz.</p>
+      </div>
+      <div class="side-item reveal">
+        <h3>İşletme vitrini ve dizini <span class="off">kapalı</span></h3>
+        <p>Ticari hesaplar başvuru ve belge incelemesinden sonra vitrin açar ve Keşfet'teki işletme dizininde listelenir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= HOW IT WORKS ================= -->
 <section class="block" aria-labelledby="how-title">
   <div class="wrap">
@@ -932,10 +1065,10 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
       <p>İlk girişten ilk paylaşıma kadar dört adım.</p>
     </div>
     <ol class="steps reveal">
-      <li><h3>Kayıt</h3><p>Hesap oluşturulur; kimlik doğrulama Supabase Auth üzerinden.</p></li>
+      <li><h3>Kayıt</h3><p>Hesap oluşturulur ve 18 yaş beyanı alınır; kimlik doğrulama Supabase Auth üzerinden.</p></li>
       <li><h3>Onboarding</h3><p>Profil, kullanılan takımlar, ilk takipler ve içerik tercihleri.</p></li>
       <li><h3>Akış</h3><p>Tercihler ve takipler, ilk günden kişisel bir akış üretir.</p></li>
-      <li><h3>Paylaş ve keşfet</h3><p>Av, ekipman ve gözlem paylaşılır; yeni kişiler ve meralar keşfedilir.</p></li>
+      <li><h3>Kaydet, paylaş, keşfet</h3><p>Çıkış günlüğe yazılır, istenirse gönderiye dönüşür; yeni kişiler ve meralar keşfedilir.</p></li>
     </ol>
   </div>
 </section>
@@ -953,7 +1086,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
         <div class="diagram-scroll" tabindex="0" role="region" aria-label="Mimari şeması, yatay kaydırılabilir">
           <svg viewBox="0 0 760 420" role="img" aria-labelledby="dg-title dg-desc">
             <title id="dg-title">Avizi sistem mimarisi</title>
-            <desc id="dg-desc">Web istemcisi Next.js sunucusuyla konuşur. Next.js, Supabase üzerindeki PostgreSQL 17, Auth ve Storage'ı kullanır; görünürlük satır düzeyi güvenlik (RLS) ile veritabanında belirlenir. Veritabanındaki outbox tablosu öneri worker'ını besler; worker etkileşimleri Gorse'a aktarır. Gorse yalnızca aday gönderi listesi döndürür. Moderasyon paneli ayrı bir origin'de çalışır ve TOTP iki adımlı doğrulama zorunludur.</desc>
+            <desc id="dg-desc">Web istemcisi ve Expo ile yazılmış iOS/Android uygulaması Next.js sunucusuyla konuşur. Next.js, Supabase üzerindeki PostgreSQL 17, Auth ve Storage'ı kullanır; görünürlük satır düzeyi güvenlik (RLS) ile veritabanında belirlenir. Veritabanındaki outbox tablosu öneri worker'ını besler; worker etkileşimleri Gorse'a aktarır. Gorse yalnızca aday gönderi listesi döndürür. Moderasyon paneli ayrı bir origin'de çalışır ve TOTP iki adımlı doğrulama zorunludur.</desc>
             <defs>
               <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="dg-arrow" d="M0 0L10 5L0 10z"/></marker>
               <marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="dg-arrow pri" d="M0 0L10 5L0 10z"/></marker>
@@ -961,15 +1094,15 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
 
             <!-- Client -->
             <rect class="dg-box" x="16" y="40" width="168" height="92" rx="12"/>
-            <text class="dg-title" x="32" y="68">Web istemcisi</text>
+            <text class="dg-title" x="32" y="68">Web ve mobil istemci</text>
             <text class="dg-sub" x="32" y="90">React 19, TypeScript</text>
-            <text class="dg-sub" x="32" y="110">Açık / koyu tema</text>
+            <text class="dg-sub" x="32" y="110">Expo: iOS ve Android</text>
 
             <!-- Next -->
             <rect class="dg-box" x="252" y="24" width="236" height="124" rx="12"/>
             <text class="dg-title" x="268" y="52">Next.js 16 sunucusu</text>
-            <text class="dg-mono" x="268" y="76">112 API route</text>
-            <text class="dg-mono" x="268" y="98">akış hattı v1.1.0</text>
+            <text class="dg-mono" x="268" y="76">221 API route</text>
+            <text class="dg-mono" x="268" y="98">akış hattı home-v1.1.0</text>
             <text class="dg-sub" x="268" y="124">Aday, skor, slate, cursor</text>
 
             <!-- Gorse -->
@@ -991,7 +1124,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
             <text class="dg-sub" x="364" y="334">Storage</text>
             <rect class="dg-box inner" x="440" y="312" width="76" height="34" rx="8"/>
             <text class="dg-sub" x="450" y="334">Outbox</text>
-            <text class="dg-mono" x="268" y="378">146 migration, 72 pgTAP dosyası</text>
+            <text class="dg-mono" x="268" y="378">315 migration, 175 pgTAP dosyası</text>
 
             <!-- Worker -->
             <rect class="dg-box" x="580" y="290" width="164" height="72" rx="12"/>
@@ -1025,11 +1158,11 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
       <div class="side-list">
         <div class="side-item reveal">
           <h3><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>Moderasyon paneli</h3>
-          <p>Ana uygulamadan ayrı bir origin'de çalışır. TOTP ile iki adımlı doğrulama zorunludur.</p>
+          <p>Ana uygulamadan ayrı bir origin'de çalışır. TOTP ile iki adımlı doğrulama zorunludur; personel işlemleri denetim kaydına yazılır.</p>
         </div>
         <div class="side-item reveal">
-          <h3><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>KVKK akışları</h3>
-          <p>Kullanıcı kendi verisini dışa aktarabilir ve hesabının silinmesini isteyebilir.</p>
+          <h3><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>KVKK ve 5651</h3>
+          <p>Kullanıcı verisini dışa aktarabilir; hesap silme 14 günlük askıyla işler ve web'den de istenebilir. 5651 erişim kaydı ayrı tutulur, hesap silmeden muaftır ve yalnız yetkili personel görür.</p>
         </div>
         <div class="side-item reveal">
           <h3><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg>A/B deney altyapısı</h3>
@@ -1042,7 +1175,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
     <div class="pipeline reveal" id="hat">
       <div class="pipeline-head">
         <h3>Akış hattı</h3>
-        <span class="version">feed algoritması v1.1.0</span>
+        <span class="version">akış algoritması home-v1.1.0</span>
       </div>
       <ol class="stages" role="tablist" aria-label="Akış hattı aşamaları" id="stages"></ol>
       <div class="stage-detail" id="stageDetail" role="tabpanel" aria-live="polite"></div>
@@ -1074,14 +1207,14 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
   <div class="wrap">
     <div class="block-head reveal">
       <h2 id="eng-title">Mühendislik disiplini</h2>
-      <p>Sayılar doğrudan kod tabanından alındı. Veritabanı kuralları uygulama testlerinden ayrı, SQL düzeyinde test ediliyor.</p>
+      <p>Sayılar doğrudan kod tabanından alındı (Kasım 2026). Veritabanı kuralları uygulama testlerinden ayrı, SQL düzeyinde test ediliyor.</p>
     </div>
     <div class="stats reveal">
-      <div class="stat"><div class="num">146</div><div class="lbl">veritabanı migration'ı</div></div>
-      <div class="stat"><div class="num">72</div><div class="lbl">pgTAP SQL test dosyası</div></div>
-      <div class="stat"><div class="num">212</div><div class="lbl">uygulama test dosyası</div></div>
-      <div class="stat"><div class="num">112</div><div class="lbl">API route</div></div>
-      <div class="stat wide"><div class="num">v1.1.0</div><div class="lbl">feed algoritması sürümü</div></div>
+      <div class="stat"><div class="num">315</div><div class="lbl">veritabanı migration'ı</div></div>
+      <div class="stat"><div class="num">175</div><div class="lbl">pgTAP SQL test dosyası</div></div>
+      <div class="stat"><div class="num">461</div><div class="lbl">uygulama test dosyası (web ve mobil)</div></div>
+      <div class="stat"><div class="num">221</div><div class="lbl">API route</div></div>
+      <div class="stat wide"><div class="num">v1.1.0</div><div class="lbl">etkin akış algoritması (home-v1.1.0)</div></div>
     </div>
 
     <div class="principles">
@@ -1117,16 +1250,16 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
     <div class="road">
       <div class="now reveal">
         <h3><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>Şu an</h3>
-        <p>Geliştirme aşamasında, henüz yayında değil.</p>
-        <p class="muted">Mesajlaşma ve bildirim ekranları henüz arka uca bağlı değil. 2026'da kuruldu, dış yatırım yok, pazar şimdilik Türkiye.</p>
+        <p>Web ve mobil çekirdek hazır; sıradaki adımlar dış hesaplara bağlı.</p>
+        <p class="muted">Mesajlaşma ve uygulama içi bildirimler arka uca bağlı; e-posta ve anlık bildirim gönderimi kapalı bayrakta. Yeni özelliklerin çoğu kapalı bayrakla geliyor. 2026'da kuruldu, dış yatırım yok, pazar şimdilik Türkiye.</p>
       </div>
       <ol class="timeline reveal">
-        <li><b>Kontrollü staging <span class="tag-next">Sıradaki</span></b><span>Üretime yakın, erişimi sınırlı bir ortam.</span></li>
-        <li><b>Yasal metinlerin onayı</b><span>Kullanım koşulları, gizlilik ve KVKK metinleri.</span></li>
-        <li><b>Alan adı ve e-posta altyapısı</b><span>avizi.app ve işlem e-postaları.</span></li>
-        <li><b>Gözlemlenebilirlik</b><span>Log, metrik ve hata takibi.</span></li>
-        <li><b>Kapasite testleri</b><span>Akış hattının yük altında davranışı.</span></li>
-        <li><b>Kapalı beta</b><span>Davetli küçük bir balıkçı grubuyla.</span></li>
+        <li><b>Mağaza ve giriş hesapları <span class="tag-next">Sıradaki</span></b><span>Apple Developer, Google Play Console, Google ve Apple ile giriş; alan adı ve e-posta altyapısı.</span></li>
+        <li><b>Hukuk metinleri</b><span>KVKK aydınlatma ve açık rıza, kullanım koşulları, satış metinleri.</span></li>
+        <li><b>Sunucu ve yedek</b><span>Hetzner'de kurulum, her gece şifreli yedek, düzenli geri yükleme testi.</span></li>
+        <li><b>Gözlem</b><span>Hata takibi ve ürün analitiği, KVKK rızasıyla.</span></li>
+        <li><b>Mobil kapalı test</b><span>Google Play'de 12 testçi ile 14 gün, iOS'ta TestFlight.</span></li>
+        <li><b>Kapalı beta</b><span>Davetli küçük bir avcı grubuyla.</span></li>
       </ol>
     </div>
   </div>
@@ -1188,7 +1321,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
 
 <footer>
   <div class="wrap foot">
-    <span>© 2026 Avizi. avizi.app</span>
+    <span>© 2026 Avizi.</span>
     <span>Arayüz görüntüleri temsilîdir; kullanıcı adları ve içerik kurgusaldır.</span>
   </div>
 </footer>
@@ -1268,9 +1401,10 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
   var pin = document.getElementById("pin");
   var cap = document.getElementById("mapCap");
   var modes = {
-    exact:  { r: 0,  pin: 1, text: "Gönderide nokta görünür. Kullanıcı bunu bilerek seçer." },
-    approx: { r: 44, pin: 0, text: "Gönderide geniş bir bölge görünür, nokta görünmez." },
-    hidden: { r: 0,  pin: 0, text: "Gönderide konum paylaşılmaz." }
+    exact:    { r: 0,  pin: 1, text: "Gönderide nokta görünür. Kullanıcı bunu bilerek seçer; bu seviye şimdilik kapalı." },
+    approx:   { r: 30, pin: 0, text: "Gönderide yaklaşık 3 km'lik bir hücre görünür, nokta görünmez." },
+    regional: { r: 72, pin: 0, text: "Gönderide yalnız il ve ilçe adı görünür, koordinat görünmez." },
+    hidden:   { r: 0,  pin: 0, text: "Gönderide konum paylaşılmaz." }
   };
   function setMode(btn) {
     var m = modes[btn.getAttribute("data-mode")];
@@ -1304,7 +1438,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
       why: "Öneri motoru bir gönderiyi önerebilir ama gösterilip gösterilmeyeceğine karar veremez. Gizlilik hatası yapabilecek tek bir yer kalır." },
     { t: "Skor ve çeşitlilik",
       d: "Uygun adaylar skorlanır, ardından bir reranker çeşitlilik ekler.",
-      list: ["Skorlama", "Çeşitlilik için yeniden sıralama"],
+      list: ["Skorlama", "Çeşitlilik için yeniden sıralama", "V1.2 formülü (ilgi, tazelik, yazar puanı) ve %10–20 keşif payı taslak sürümde (home-v1.3.0), bayrakla kapalı"],
       why: "Yalnızca skora göre sıralanan bir akış birkaç hesabın ve konunun tekrarına döner." },
     { t: "Slate ve imzalı cursor",
       d: "Sıralanmış sonuç (slate) saklanır; sonraki sayfalar bu slate'ten imzalı bir cursor ile okunur.",
