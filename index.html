@@ -7,6 +7,8 @@
 <meta name="description" content="Avizi: Türkiye'de olta ve zıpkınla avlananlar için topluluk, av günlüğü ve planlama platformu. Web ve mobil. Ürün özellikleri, öneri hattı ve mimari. Geliştirme aşamasında.">
 <meta name="author" content="Emin Özbayraktar">
 <meta name="color-scheme" content="light dark">
+<link rel="icon" href="img/avizi-v2-ikon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/avizi-v2-ikon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -142,6 +144,14 @@ section.block { padding: 72px 0; border-top: 1px solid var(--line); }
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; }
 .logo:hover { color: var(--fg); }
 .logo-mark { width: 28px; height: 28px; }
+.logo-img { display: block; height: 22px; width: auto; }
+.logo-img.on-dark { display: none; }
+:root[data-theme="dark"] .logo-img.on-light { display: none; }
+:root[data-theme="dark"] .logo-img.on-dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .logo-img.on-light { display: none; }
+  :root:not([data-theme="light"]) .logo-img.on-dark { display: block; }
+}
 .nav { display: none; gap: 4px; margin-left: auto; }
 .nav a { color: var(--muted); text-decoration: none; font-size: 0.925rem; padding: 10px 12px; border-radius: var(--r-sm); }
 .nav a:hover { color: var(--fg); background: var(--subtle); }
@@ -182,6 +192,7 @@ section.block { padding: 72px 0; border-top: 1px solid var(--line); }
 .app-top { display: flex; align-items: center; justify-content: space-between; padding: 6px 14px; }
 .app-top .logo { font-size: 14px; gap: 6px; }
 .app-top .logo-mark { width: 18px; height: 18px; }
+.app-top .logo-img { height: 13px; }
 .av { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 10px; font-weight: 600; color: var(--on-primary); background: var(--primary); flex: none; }
 .av.a2 { background: var(--accent-ink); }
 .av.a3 { background: var(--success); }
@@ -577,7 +588,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
 <header class="site-header" id="top">
   <div class="wrap header-row">
     <a class="logo" href="#top" aria-label="Avizi, sayfa başı">
-      <svg class="logo-mark" aria-hidden="true"><use href="#logo"/></svg>avizi
+      <img class="logo-img on-light" src="img/avizi-v2-yazi-koyu.png" alt="Avizi" width="1569" height="375"><img class="logo-img on-dark" src="img/avizi-v2-yazi-acik.png" alt="Avizi" width="1569" height="375">
     </a>
     <nav class="nav" aria-label="Bölümler">
       <a href="#ozellikler">Özellikler</a>
@@ -630,7 +641,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
           <div class="statusbar"><span>09:41</span><span>●●● 5G</span></div>
           <div class="app-top">
             <span class="av">EÖ</span>
-            <span class="logo"><svg class="logo-mark"><use href="#logo"/></svg>avizi</span>
+            <span class="logo"><img class="logo-img on-light" src="img/avizi-v2-yazi-koyu.png" alt="" width="1569" height="375"><img class="logo-img on-dark" src="img/avizi-v2-yazi-acik.png" alt="" width="1569" height="375"></span>
             <span style="width:26px"></span>
           </div>
           <div class="tabs"><span class="tab on">Sana Özel</span><span class="tab">Takip Ettiklerin</span></div>
