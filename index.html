@@ -179,7 +179,10 @@ section.block { padding: 72px 0; border-top: 1px solid var(--line); }
 .hero-stack { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
 .hero-stack li { font-family: var(--mono); font-size: 0.8rem; padding: 4px 10px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--card); color: var(--muted); }
 .hero-byline { margin-top: 20px; font-size: 0.9rem; color: var(--muted); }
-.hero-byline strong { color: var(--fg); font-weight: 600; }
+.hero-byline strong, .hero-byline a { color: var(--fg); font-weight: 600; }
+.hero-byline a { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; transition: text-decoration-color 0.15s ease; }
+.hero-byline a:hover { text-decoration-color: currentColor; }
+.hero-byline a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: 2px; }
 
 /* ---------- Phone mockup ---------- */
 .phone-wrap { display: flex; justify-content: center; }
@@ -632,7 +635,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
       <ul class="hero-stack" aria-label="Teknoloji yığını">
         <li>Next.js 16</li><li>React 19</li><li>TypeScript</li><li>Expo</li><li>PostgreSQL 17</li><li>Supabase RLS</li><li>Gorse</li>
       </ul>
-      <p class="hero-byline">Ürün ve teknoloji: <strong>Emin Özbayraktar</strong></p>
+      <p class="hero-byline">Ürün ve teknoloji: <a href="https://www.linkedin.com/in/emin-ozbayraktar/" target="_blank" rel="noopener">Emin Özbayraktar</a>, <a href="https://www.linkedin.com/in/arda-burak-akal%C4%B1n-9b54b9206/" target="_blank" rel="noopener">Arda Burak Akalın</a></p>
     </div>
 
     <div class="phone-wrap">
@@ -1300,6 +1303,9 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
           <h3>Arda Burak Akalın</h3>
           <div class="role">Kurucu ortak, büyüme ve topluluk</div>
           <p>Marka, topluluk yönetimi, kullanıcı araştırması ve iş ortaklıkları.</p>
+          <div class="links">
+            <a href="https://www.linkedin.com/in/arda-burak-akal%C4%B1n-9b54b9206/">LinkedIn</a>
+          </div>
         </div>
       </div>
     </div>
