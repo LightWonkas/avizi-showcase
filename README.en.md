@@ -7,8 +7,8 @@ A community platform for adults (18+) in Turkey who fish with rod and line or sp
 **Showcase:** [lightwonkas.github.io/avizi-showcase](https://lightwonkas.github.io/avizi-showcase/)
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/preview-dark.png">
-  <img alt="Avizi showcase page" src="docs/preview-light.png">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/preview-dark-v2.png">
+  <img alt="Avizi showcase page" src="docs/preview-light-v2.png">
 </picture>
 
 > **Status:** The web and mobile core is built; the product is not live yet, and the next steps depend on external accounts. The application source code is in a private repository; this repository contains the showcase page only.
