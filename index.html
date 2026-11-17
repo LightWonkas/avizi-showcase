@@ -921,7 +921,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
       <!-- Business -->
       <article class="feat span-6 reveal">
         <h3>İşletmeler</h3>
-        <p>Av malzemesi dükkânları ve rehberler ticari hesapla vitrin açar: kategori, adres ve harita pini, çalışma saatleri, iletişim ve en çok iki sabit gönderi. Keşfet'te işletme dizini var. Sponsorlu alanlar altyapıda hazır, ama bilerek kapalı.</p>
+        <p>Av malzemesi dükkânları ve rehberler ticari hesapla vitrin açar: kategori, adres ve harita pini, çalışma saatleri, iletişim ve en çok iki sabit gönderi. Keşfet'te işletme dizini var.</p>
         <div class="mini">
           <div class="biz">
             <span class="av lg a2" aria-hidden="true">ÖD</span>
@@ -930,9 +930,8 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
           </div>
           <div class="locked">
             <svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg>
-            <div><b>Sponsorlu alan kapalı</b>Bu alan henüz açılmadı. Açılana kadar akışta sponsorlu içerik gösterilmez.</div>
+            <div><b>Belgeyle doğrulama</b>Vergi levhası ya da resmi belgeyle başvurulur; onaylanan hesap Doğrulanmış İşletme rozetiyle açılır.</div>
           </div>
-          <p class="note">Çalışmayan bir özellik gizlenmez; kapalı görünür ve nedenini söyler.</p>
         </div>
       </article>
     </div>
@@ -1101,7 +1100,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
             <!-- Next -->
             <rect class="dg-box" x="252" y="24" width="236" height="124" rx="12"/>
             <text class="dg-title" x="268" y="52">Next.js 16 sunucusu</text>
-            <text class="dg-mono" x="268" y="76">221 API route</text>
+            <text class="dg-mono" x="268" y="76">205 API route</text>
             <text class="dg-mono" x="268" y="98">akış hattı home-v1.1.0</text>
             <text class="dg-sub" x="268" y="124">Aday, skor, slate, cursor</text>
 
@@ -1124,7 +1123,7 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
             <text class="dg-sub" x="364" y="334">Storage</text>
             <rect class="dg-box inner" x="440" y="312" width="76" height="34" rx="8"/>
             <text class="dg-sub" x="450" y="334">Outbox</text>
-            <text class="dg-mono" x="268" y="378">315 migration, 175 pgTAP dosyası</text>
+            <text class="dg-mono" x="268" y="378">335 migration, 173 pgTAP dosyası</text>
 
             <!-- Worker -->
             <rect class="dg-box" x="580" y="290" width="164" height="72" rx="12"/>
@@ -1165,8 +1164,8 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
           <p>Kullanıcı verisini dışa aktarabilir; hesap silme 14 günlük askıyla işler ve web'den de istenebilir. 5651 erişim kaydı ayrı tutulur, hesap silmeden muaftır ve yalnız yetkili personel görür.</p>
         </div>
         <div class="side-item reveal">
-          <h3><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg>A/B deney altyapısı</h3>
-          <p>Kullanıcı bir deney grubuna kalıcı (sticky) atanır. Her deneyin bir kapatma anahtarı (kill switch) vardır.</p>
+          <h3><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg>Özellik bayrakları</h3>
+          <p>Yeni özellikler kapalı bir bayrakla gelir ve hazır olduğunda açılır. Bayrak kapalıyken sunucu da o yolu reddeder.</p>
         </div>
       </div>
     </div>
@@ -1210,10 +1209,10 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
       <p>Sayılar doğrudan kod tabanından alındı (Kasım 2026). Veritabanı kuralları uygulama testlerinden ayrı, SQL düzeyinde test ediliyor.</p>
     </div>
     <div class="stats reveal">
-      <div class="stat"><div class="num">315</div><div class="lbl">veritabanı migration'ı</div></div>
-      <div class="stat"><div class="num">175</div><div class="lbl">pgTAP SQL test dosyası</div></div>
-      <div class="stat"><div class="num">461</div><div class="lbl">uygulama test dosyası (web ve mobil)</div></div>
-      <div class="stat"><div class="num">221</div><div class="lbl">API route</div></div>
+      <div class="stat"><div class="num">335</div><div class="lbl">veritabanı migration'ı</div></div>
+      <div class="stat"><div class="num">173</div><div class="lbl">pgTAP SQL test dosyası</div></div>
+      <div class="stat"><div class="num">443</div><div class="lbl">uygulama test dosyası (web ve mobil)</div></div>
+      <div class="stat"><div class="num">205</div><div class="lbl">API route</div></div>
       <div class="stat wide"><div class="num">v1.1.0</div><div class="lbl">etkin akış algoritması (home-v1.1.0)</div></div>
     </div>
 
@@ -1446,8 +1445,8 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
       why: "Kaydırma sırasında akışın yeniden hesaplanması, aynı gönderiyi iki kez göstermek ya da birini atlamak demektir." },
     { t: "Teslimat ve exposure",
       d: "Sayfanın istemciye teslimi ve exposure kaydı aynı veritabanı transaction'ında yazılır.",
-      list: ["Teslim edildi ama kaydedilmedi durumu oluşmaz", "Deney ve öneri verisi tutarlı kalır"],
-      why: "Exposure kaydı A/B deneylerinin ve öneri modelinin temel verisi. Yarım kalan yazım ölçümü bozar." },
+      list: ["Teslim edildi ama kaydedilmedi durumu oluşmaz", "Öneri verisi tutarlı kalır"],
+      why: "Exposure kaydı öneri modelinin ve akış ölçümünün temel verisi. Yarım kalan yazım ölçümü bozar." },
     { t: "Nitelikli gösterim",
       d: "İstemci, bir kartın gerçekten görüldüğünü ancak eşik aşıldığında bildirir.",
       list: ["Kartın en az %50'si görünür", "En az 1 saniye ekranda"],

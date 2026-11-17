@@ -24,7 +24,7 @@ A community platform for adults (18+) in Turkey who fish with rod and line or sp
 | Weather | Open-Meteo forecasts, stored as immutable snapshots |
 | Moderation | Panel on a separate origin, mandatory TOTP, audit log |
 | Compliance | KVKK (Turkish data protection law): data export, account deletion with a 14-day grace period; access log under Law No. 5651 |
-| Experimentation | A/B framework — sticky assignment, per-experiment kill switch |
+| Feature flags | New features ship behind a closed flag; the server rejects the path while it is off |
 
 ## Features
 
@@ -45,7 +45,7 @@ The recommendation engine only proposes candidates; visibility is always decided
 
 ```mermaid
 flowchart LR
-  C[Web and mobile clients<br/>React 19 · Expo] <--> N[Next.js 16<br/>221 API routes]
+  C[Web and mobile clients<br/>React 19 · Expo] <--> N[Next.js 16<br/>205 API routes]
   N <-->|RLS| DB[(PostgreSQL 17)]
   DB --> O[Outbox]
   O --> W[Recommendation worker]
@@ -71,10 +71,10 @@ The V1.2 ranking formula (interest, freshness, author score; 10–20% exploratio
 
 | Metric | Value |
 |---|---|
-| Database migrations | 315 |
-| pgTAP SQL test files | 175 |
-| Application test files (web and mobile) | 461 |
-| API routes | 221 |
+| Database migrations | 335 |
+| pgTAP SQL test files | 173 |
+| Application test files (web and mobile) | 443 |
+| API routes | 205 |
 
 - **UI principle:** no fake data and no fake success states; disabled features are shown as unavailable, with the reason.
 - **Accessibility:** 44 px minimum touch targets, full keyboard support, light/dark themes, `prefers-reduced-motion`.

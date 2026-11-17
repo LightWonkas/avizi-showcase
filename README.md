@@ -24,7 +24,7 @@ Türkiye'de olta ve zıpkınla avlanan yetişkinler (18+) için topluluk platfor
 | Hava | Open-Meteo tahmini, değişmez anlık kayıt |
 | Moderasyon | Ayrı origin üzerinde panel, zorunlu TOTP, denetim kaydı |
 | Uyum | KVKK: veri dışa aktarma, 14 günlük askılı hesap silme; 5651 erişim kaydı |
-| Deney | A/B altyapısı — sticky atama, deney başına kill switch |
+| Özellik bayrakları | Yeni özellik kapalı bayrakla gelir; kapalıyken sunucu da reddeder |
 
 ## Özellikler
 
@@ -45,7 +45,7 @@ Dış hesap ya da kurucu kararı bekleyen özellikler kapalı bayrakla gelir.
 
 ```mermaid
 flowchart LR
-  C[Web ve mobil istemci<br/>React 19 · Expo] <--> N[Next.js 16<br/>221 API route]
+  C[Web ve mobil istemci<br/>React 19 · Expo] <--> N[Next.js 16<br/>205 API route]
   N <-->|RLS| DB[(PostgreSQL 17)]
   DB --> O[Outbox]
   O --> W[Öneri worker'ı]
@@ -71,10 +71,10 @@ V1.2 sıralama formülü (ilgi, tazelik, yazar puanı; %10–20 keşif payı) ta
 
 | Metrik | Değer |
 |---|---|
-| Veritabanı migration'ı | 315 |
-| pgTAP SQL test dosyası | 175 |
-| Uygulama test dosyası (web ve mobil) | 461 |
-| API route | 221 |
+| Veritabanı migration'ı | 335 |
+| pgTAP SQL test dosyası | 173 |
+| Uygulama test dosyası (web ve mobil) | 443 |
+| API route | 205 |
 
 - **Arayüz ilkesi:** sahte veri ve sahte başarı durumu gösterilmez; devre dışı özellikler kapalı ve gerekçesiyle görünür.
 - **Erişilebilirlik:** 44 px minimum dokunma alanı, tam klavye desteği, açık/koyu tema, `prefers-reduced-motion`.
