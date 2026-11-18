@@ -7,8 +7,8 @@ Türkiye'de olta ve zıpkınla avlanan yetişkinler (18+) için topluluk platfor
 **Vitrin:** [lightwonkas.github.io/avizi-showcase](https://lightwonkas.github.io/avizi-showcase/)
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/preview-dark-v3.png">
-  <img alt="Avizi vitrin sayfası" src="docs/preview-light-v3.png">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/preview-dark-v4.png">
+  <img alt="Avizi vitrin sayfası" src="docs/preview-light-v4.png">
 </picture>
 
 > **Durum:** Web ve mobil çekirdek hazır; yayında değil. Sıradaki adımlar dış hesaplara bağlı. Uygulama kaynak kodu özel depodadır; bu depo yalnızca vitrin sayfasını içerir.

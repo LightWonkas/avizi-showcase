@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://avizi.app/">
 <meta property="og:title" content="Avizi — Balıkçıların sosyal medya uygulaması">
 <meta property="og:description" content="Olta ve zıpkın avcıları için sosyal medya: avını paylaş, takip et, mesajlaş, av günlüğünü tut. Meran gizli kalır.">
-<meta property="og:image" content="https://avizi.app/docs/preview-light-v3.png">
+<meta property="og:image" content="https://avizi.app/docs/preview-light-v4.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://avizi.app/">
 <meta name="author" content="Emin Özbayraktar">
@@ -187,11 +187,6 @@ section.block { padding: 72px 0; border-top: 1px solid var(--line); }
 .hero-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-stack { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
 .hero-stack li { font-family: var(--mono); font-size: 0.8rem; padding: 4px 10px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--card); color: var(--muted); }
-.hero-byline { margin-top: 20px; font-size: 0.9rem; color: var(--muted); }
-.hero-byline strong, .hero-byline a { color: var(--fg); font-weight: 600; }
-.hero-byline a { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; transition: text-decoration-color 0.15s ease; }
-.hero-byline a:hover { text-decoration-color: currentColor; }
-.hero-byline a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: 2px; }
 
 /* ---------- Phone mockup ---------- */
 .phone-wrap { display: flex; justify-content: center; }
@@ -503,27 +498,9 @@ section.block { padding: 72px 0; border-top: 1px solid var(--line); }
 .timeline span { color: var(--muted); font-size: 0.925rem; }
 .tag-next { font-size: 11px; font-weight: 600; color: var(--primary); background: var(--primary-soft); padding: 2px 8px; border-radius: 999px; margin-left: 6px; vertical-align: 2px; }
 
-/* ---------- Team ---------- */
-.team { display: grid; gap: 16px; }
-@media (min-width: 800px) { .team { grid-template-columns: 1fr 1fr; gap: 20px; } }
-.person { display: flex; gap: 16px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-xl); padding: 24px; }
-.person .av { width: 56px; height: 56px; font-size: 1.1rem; }
-.person h3 { font-size: 1.1rem; font-weight: 650; }
-.person .role { color: var(--primary); font-weight: 500; font-size: 0.95rem; margin-top: 2px; }
-.person p { margin-top: 10px; color: var(--muted); font-size: 0.95rem; }
-.person .links { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 0.925rem; }
+
 
 /* ---------- CTA / footer ---------- */
-.cta { padding: 88px 0; border-top: 1px solid var(--line); }
-.cta-box { background: var(--primary); color: var(--on-primary); border-radius: 24px; padding: 40px 24px; display: grid; gap: 24px; position: relative; overflow: hidden; }
-@media (min-width: 900px) { .cta-box { padding: 56px; grid-template-columns: 1.3fr 1fr; align-items: end; } }
-.cta-box h2 { font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.3rem); font-weight: 700; letter-spacing: -0.025em; max-width: 20ch; position: relative; }
-.cta-box p { margin-top: 12px; opacity: .85; max-width: 52ch; position: relative; }
-.cta-links { display: grid; gap: 8px; position: relative; }
-.cta-links a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 0 16px; border-radius: var(--r); color: var(--on-primary); text-decoration: none; border: 1px solid color-mix(in oklch, var(--on-primary) 30%, transparent); font-weight: 500; }
-.cta-links a:hover { background: color-mix(in oklch, var(--on-primary) 12%, transparent); color: var(--on-primary); }
-.cta-links a span:last-child { font-family: var(--mono); font-size: 0.85rem; opacity: .85; overflow-wrap: anywhere; text-align: right; }
-.cta-contours { position: absolute; right: -40px; top: -40px; width: 420px; height: 420px; color: color-mix(in oklch, var(--on-primary) 18%, transparent); pointer-events: none; }
 footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
 .foot { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
 
@@ -608,7 +585,6 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
       <a href="#mimari">Mimari</a>
       <a href="#muhendislik">Mühendislik</a>
       <a href="#durum">Durum</a>
-      <a href="#iletisim">İletişim</a>
     </nav>
     <button class="theme-btn" type="button" id="themeBtn" aria-label="Koyu temaya geç">
       <svg class="ico sun" aria-hidden="true"><use href="#i-sun"/></svg>
@@ -638,13 +614,12 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
       <h1 id="hero-title">Mera bilgisini paylaşmak için bir yer, sırrını vermeden.</h1>
       <p class="hero-lead">Avizi, Türkiye'de olta ve zıpkınla avlanan yetişkinler (18+) için bir topluluk: kişisel akış, Av Günlüğü, hava ve deniz planlaması, mera takibi ve gönderi başına konum gizliliği. Web'de ve iOS/Android uygulamasında.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#iletisim">İletişime geç</a>
+        <a class="btn btn-primary" href="#ozellikler">Özellikleri gör</a>
         <a class="btn btn-ghost" href="#mimari">Mimariyi incele</a>
       </div>
       <ul class="hero-stack" aria-label="Teknoloji yığını">
         <li>Next.js 16</li><li>React 19</li><li>TypeScript</li><li>Expo</li><li>PostgreSQL 17</li><li>Supabase RLS</li><li>Gorse</li>
       </ul>
-      <p class="hero-byline">Ürün ve teknoloji: <a href="https://www.linkedin.com/in/emin-ozbayraktar/" target="_blank" rel="noopener">Emin Özbayraktar</a>, <a href="https://www.linkedin.com/in/arda-burak-akal%C4%B1n-9b54b9206/" target="_blank" rel="noopener">Arda Burak Akalın</a></p>
     </div>
 
     <div class="phone-wrap">
@@ -1287,61 +1262,6 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 0.875rem; }
   </div>
 </section>
 
-<!-- ================= TEAM ================= -->
-<section class="block" aria-labelledby="team-title">
-  <div class="wrap">
-    <div class="block-head reveal">
-      <h2 id="team-title">Ekip</h2>
-    </div>
-    <div class="team">
-      <div class="person reveal">
-        <span class="av" aria-hidden="true">EÖ</span>
-        <div>
-          <h3>Emin Özbayraktar</h3>
-          <div class="role">Kurucu ortak, ürün ve teknoloji</div>
-          <p>Yazılım mimarisi, veri modeli, güvenlik, test ve sürüm yönetimi.</p>
-          <div class="links">
-            <a href="https://www.linkedin.com/in/emin-ozbayraktar">LinkedIn</a>
-            <a href="https://github.com/lightwonkas">GitHub</a>
-          </div>
-        </div>
-      </div>
-      <div class="person reveal">
-        <span class="av a2" aria-hidden="true">AA</span>
-        <div>
-          <h3>Arda Burak Akalın</h3>
-          <div class="role">Kurucu ortak, büyüme ve topluluk</div>
-          <p>Marka, topluluk yönetimi, kullanıcı araştırması ve iş ortaklıkları.</p>
-          <div class="links">
-            <a href="https://www.linkedin.com/in/arda-burak-akal%C4%B1n-9b54b9206/">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="cta" id="iletisim" aria-labelledby="cta-title">
-  <div class="wrap">
-    <div class="cta-box reveal">
-      <svg class="cta-contours" viewBox="0 0 420 420" aria-hidden="true">
-        <g fill="none" stroke="currentColor" stroke-width="1.2">
-          <circle cx="260" cy="160" r="40"/><circle cx="260" cy="160" r="80"/><circle cx="260" cy="160" r="120"/><circle cx="260" cy="160" r="160"/><circle cx="260" cy="160" r="200"/>
-        </g>
-      </svg>
-      <div>
-        <h2 id="cta-title">İletişim</h2>
-        <p>Kaynak kod özel depodadır. Teknik görüşme, mimari incelemesi ve kod turu talepleri için iletişime geçebilirsiniz.</p>
-      </div>
-      <div class="cta-links">
-        <a href="mailto:emin.ozbayraktarr@gmail.com"><span>E-posta</span><span>emin.ozbayraktarr@gmail.com</span></a>
-        <a href="https://www.linkedin.com/in/emin-ozbayraktar"><span>LinkedIn</span><span>in/emin-ozbayraktar</span></a>
-        <a href="https://github.com/lightwonkas"><span>GitHub</span><span>lightwonkas</span></a>
-      </div>
-    </div>
-  </div>
-</section>
 </main>
 
 <footer>
