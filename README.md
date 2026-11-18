@@ -4,7 +4,7 @@
 
 Türkiye'de olta ve zıpkınla avlanan yetişkinler (18+) için topluluk platformu. Kişisel akış, Av Günlüğü, hava ve deniz planlaması, mera takibi ve gönderi başına konum gizliliği; web'de ve iOS/Android uygulamasında.
 
-**Vitrin:** [lightwonkas.github.io/avizi-showcase](https://avizi.app/)
+**Vitrin:** [avizi.app](https://avizi.app/)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/preview-dark-v4.png">
@@ -87,7 +87,6 @@ V1.2 sıralama formülü (ilgi, tazelik, yazar puanı; %10–20 keşif payı) ta
 4. Gözlem: hata takibi ve ürün analitiği
 5. Mobil kapalı test: Google Play'de 12 testçi × 14 gün, TestFlight
 6. Kapalı beta
-
 
 ---
 
