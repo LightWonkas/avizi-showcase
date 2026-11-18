@@ -4,7 +4,7 @@
 
 A community platform for adults (18+) in Turkey who fish with rod and line or spearfish. Personalized feed, catch log, weather and sea planning, fishing spot tracking and per-post location privacy, on the web and in an iOS/Android app.
 
-**Showcase:** [lightwonkas.github.io/avizi-showcase](https://lightwonkas.github.io/avizi-showcase/)
+**Showcase:** [lightwonkas.github.io/avizi-showcase](https://avizi.app/)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/preview-dark-v4.png">
@@ -88,16 +88,6 @@ The V1.2 ranking formula (interest, freshness, author score; 10–20% exploratio
 5. Mobile closed testing: 12 testers for 14 days on Google Play, TestFlight on iOS
 6. Closed beta
 
-## Team
-
-| | |
-|---|---|
-| **Emin Özbayraktar** | Co-founder — Product & Technology |
-| **Arda Burak Akalın** | Co-founder — Growth & Community |
-
-## Contact
-
-[emin.ozbayraktarr@gmail.com](mailto:emin.ozbayraktarr@gmail.com) · [LinkedIn](https://www.linkedin.com/in/emin-ozbayraktar) · [GitHub](https://github.com/lightwonkas)
 
 ---
 

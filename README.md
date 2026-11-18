@@ -4,7 +4,7 @@
 
 Türkiye'de olta ve zıpkınla avlanan yetişkinler (18+) için topluluk platformu. Kişisel akış, Av Günlüğü, hava ve deniz planlaması, mera takibi ve gönderi başına konum gizliliği; web'de ve iOS/Android uygulamasında.
 
-**Vitrin:** [lightwonkas.github.io/avizi-showcase](https://lightwonkas.github.io/avizi-showcase/)
+**Vitrin:** [lightwonkas.github.io/avizi-showcase](https://avizi.app/)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/preview-dark-v4.png">
@@ -88,16 +88,6 @@ V1.2 sıralama formülü (ilgi, tazelik, yazar puanı; %10–20 keşif payı) ta
 5. Mobil kapalı test: Google Play'de 12 testçi × 14 gün, TestFlight
 6. Kapalı beta
 
-## Ekip
-
-| | |
-|---|---|
-| **Emin Özbayraktar** | Kurucu ortak — Ürün ve Teknoloji |
-| **Arda Burak Akalın** | Kurucu ortak — Büyüme ve Topluluk |
-
-## İletişim
-
-[emin.ozbayraktarr@gmail.com](mailto:emin.ozbayraktarr@gmail.com) · [LinkedIn](https://www.linkedin.com/in/emin-ozbayraktar) · [GitHub](https://github.com/lightwonkas)
 
 ---
 
